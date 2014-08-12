@@ -49,6 +49,14 @@ XlsTable.prototype.getRowCount = function() {
 
  };
  /**
+  *获取一个表元
+  *@param rowIndex 行索引
+  *@param colIndex 列索引
+  */
+ XlsTable.prototype.getCell=function(rowIndex,colIndex){
+
+ };
+ /**
   *行对象
   */
  function XlsRow(){
