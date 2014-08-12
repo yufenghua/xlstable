@@ -6,10 +6,36 @@
  * 支持增加行列
  *支持求和
  * 实现方案 表格内容通过div来拼接，不使用table
+ * 构造方法
+ *@param  window对象
+ *@param 父节点对象
+ *@param 宽
+ *@param 高
+ *@param 行高
+ *@param 列宽
  */
- function XlsTable(){
-
+ function XlsTable(wnd,parentEle,width,height,rowHeight,colWidth,rowCount,colCount){
+ 	this.wnd=wnd;
+ 	this.parentEle=parentEle?parentEle:wnd.document.body;
+ 	this.doc=this.wnd.document;
+ 	this.width=width?width:'100%';
+ 	this.height=height?height:'100%';
+ 	this.rowHeight=rowHeight?rowHeight:'20px';
+ 	this.colWidth=colWidth?colWidth:'20px';
+ 	this.rowCount=rowCount?rowCount:3;
+	this.colCount=colCount?colCount:3;
+ 	this.initUI();
  }
+ /*初始化ui界面*/
+ XlsTable.prototype.initUI=function(){
+	this.con=this.doc.createElement('div');
+	this.parentEle.appendChid(this.con);
+	for (var i = 0; i < this.rowCount; i++) {
+		for (var ij= 0; j< this.colCount; j++) {
+			this[i]
+		};
+	};
+ };
  /**
   *获取当前的行数
   */
